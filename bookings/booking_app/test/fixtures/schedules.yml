@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start: 2019-02-02 18:45:00
+  end: 2019-02-02 18:45:00
+  trainer_id: 1
+  account_id: 1
+
+two:
+  title: MyString
+  start: 2019-02-02 18:45:00
+  end: 2019-02-02 18:45:00
+  trainer_id: 1
+  account_id: 1

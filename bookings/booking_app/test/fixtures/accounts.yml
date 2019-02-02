@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  users: one
+  trainers: one
+  schedules: one
+  clients: one
+  bookings: one
+  lesson_payments: one
+
+two:
+  users: two
+  trainers: two
+  schedules: two
+  clients: two
+  bookings: two
+  lesson_payments: two

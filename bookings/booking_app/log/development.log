@@ -1,0 +1,87 @@
+  [1m[35m (540.8ms)[0m  [1m[35mCREATE DATABASE "booking_app_development" ENCODING = 'unicode'[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (425.1ms)[0m  [1m[35mCREATE DATABASE "booking_app_test" ENCODING = 'unicode'[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1243157307469133805)[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateLessons (20190202145817)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" bigserial primary key, "image" character varying, "title" character varying, "duration" integer, "cost" integer, "category" character varying, "language" character varying, "level" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190202145817_create_lessons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190202145817"]]
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTrainers (20190202153034)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" bigserial primary key, "photo" character varying, "first_name" character varying, "last_name" character varying, "phone" character varying, "bio" text, "experience" character varying, "user_id" integer, "account_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190202153034_create_trainers.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_user_id" ON "trainers"  ("user_id")[0m
+  ↳ db/migrate/20190202153034_create_trainers.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_account_id" ON "trainers"  ("account_id")[0m
+  ↳ db/migrate/20190202153034_create_trainers.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190202153034"]]
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateClients (20190202153102)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "clients" ("id" bigserial primary key, "photo" character varying, "first_name" character varying, "last_name" character varying, "phone" character varying, "bio" text, "user_id" integer, "account_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190202153102_create_clients.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_clients_on_user_id" ON "clients"  ("user_id")[0m
+  ↳ db/migrate/20190202153102_create_clients.rb:14
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_clients_on_account_id" ON "clients"  ("account_id")[0m
+  ↳ db/migrate/20190202153102_create_clients.rb:15
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190202153102"]]
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateSchedules (20190202154500)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schedules" ("id" bigserial primary key, "title" character varying, "start" timestamp, "end" timestamp, "trainer_id" integer, "account_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190202154500_create_schedules.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_schedules_on_trainer_id" ON "schedules"  ("trainer_id")[0m
+  ↳ db/migrate/20190202154500_create_schedules.rb:12
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_schedules_on_account_id" ON "schedules"  ("account_id")[0m
+  ↳ db/migrate/20190202154500_create_schedules.rb:13
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190202154500"]]
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateAccounts (20190202155615)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "users_id" bigint, "trainers_id" bigint, "schedules_id" bigint, "clients_id" bigint, "bookings_id" bigint, "lesson_payments_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_38e7d201a2"
+FOREIGN KEY ("users_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_9360951faf"
+FOREIGN KEY ("trainers_id")
+  REFERENCES "trainers" ("id")
+, CONSTRAINT "fk_rails_e507859227"
+FOREIGN KEY ("schedules_id")
+  REFERENCES "schedules" ("id")
+, CONSTRAINT "fk_rails_1aea6130d2"
+FOREIGN KEY ("clients_id")
+  REFERENCES "clients" ("id")
+, CONSTRAINT "fk_rails_cce9d52bc3"
+FOREIGN KEY ("bookings_id")
+  REFERENCES "bookings" ("id")
+, CONSTRAINT "fk_rails_48dfa917a2"
+FOREIGN KEY ("lesson_payments_id")
+  REFERENCES "lesson_payments" ("id")
+)[0m
+  ↳ db/migrate/20190202155615_create_accounts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1243157307469133805)[0m
+  ↳ /Users/hamadalshehri/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
